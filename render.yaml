@@ -1,0 +1,12 @@
+services:
+  - type: worker
+    name: smart-stream-bot
+    env: python
+    plan: free
+    region: oregon
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false   # Render Dashboard ನಲ್ಲಿ value ಸೆಟ್ ಮಾಡಿ
+        
